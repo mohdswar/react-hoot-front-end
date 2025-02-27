@@ -12,13 +12,12 @@ const NavBar = ({ handleSignout }) => {
             <li><Link to='/'>HOME</Link></li>
             <li><Link to='/hoots'>HOOTS</Link></li>
             <li>
-              <Link to="" onClick={handleSignout}>
-                Sign Out
-              </Link>
-            </li>
-
-            <li>
               <Link to="/hoots/new">NEW HOOT</Link>
+            </li>
+            <li>
+              <Link to="" onClick={handleSignout}>
+                SIGN OUT
+              </Link>
             </li>
           </ul>
         </nav>
@@ -29,7 +28,7 @@ const NavBar = ({ handleSignout }) => {
               <Link to="/signin">Sign In</Link>
             </li>
             <li>
-              <Link to="/signup">SIGN UP</Link>
+              <Link to="/signup">Sign Up</Link>
             </li>
           </ul>
         </nav>

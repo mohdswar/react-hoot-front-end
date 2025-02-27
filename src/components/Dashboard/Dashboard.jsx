@@ -1,7 +1,7 @@
 import { AuthedUserContext } from '../../App';
 import { useContext } from 'react';
 
-const Dashboard = ({}) => {
+const Dashboard = ({ }) => {
   const user = useContext(AuthedUserContext);
   return (
     <main>
