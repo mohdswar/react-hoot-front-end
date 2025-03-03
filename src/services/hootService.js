@@ -71,6 +71,20 @@ const createComment = async (hootId, commentFormData) => {
   }
 };
 
+const deleteComment = async (hootId, commentId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${hootId}/comments/${commentId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 async function update(hootId, hootFormData) {
   try {
@@ -88,6 +102,23 @@ async function update(hootId, hootFormData) {
   }
 }
 
+// src/services/hootService.js
+
+const updateComment = async (hootId, commentId, commentFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${hootId}/comments/${commentId}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentFormData),
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export {
   index,
@@ -95,5 +126,7 @@ export {
   create,
   update,
   deleteHoot,
-  createComment
+  createComment,
+  deleteComment,
+  updateComment,
 };

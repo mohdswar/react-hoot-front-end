@@ -14,7 +14,7 @@ import SigninForm from './components/SigninForm/SigninForm';
 import HootList from './components/HootList/HootList';
 import HootDetails from './components/HootDetails/HootDetails';
 import HootForm from './components/HootForm/HootForm';
-
+import CommentForm from './components/CommentForm/CommentForm';
 
 export const AuthedUserContext = createContext(null);
 
@@ -73,6 +73,7 @@ const App = () => {
               <Route path="/hoots/:hootId" element={<HootDetails handleDeleteHoot={handleDeleteHoot} />} />
               <Route path="/hoots/new" element={<HootForm handleAddHoot={handleAddHoot} />} />
               <Route path="/hoots/:hootId/edit" element={<HootForm handleUpdateHoot={handleUpdateHoot} />} />
+              <Route path="/hoots/:hootId/comments/:commentId/edit" element={<CommentForm />} />
             </>
           ) : (
             // PUBLIC Routes:
